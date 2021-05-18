@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
 
 // function App() {
 //   return (
@@ -45,13 +45,27 @@ function App() {
     developer: "Vassiliki D",
     project: "StockMarket Mobile App",
     count: 16,
+  },
+  
+  {   
+    date: new Date(2021, 4, 12, 17, 35, 0 , 0),
+    developer: "Vassiliki D",
+    project: "StockMarket Mobile App",
+    count: 16,
+  },
+
+  {   
+    date: new Date(2021, 4, 12, 17, 35, 0 , 0),
+    developer: "Vassiliki D",
+    project: "StockMarket Mobile App",
+    count: 16,
   }
 
 ]
   return (
     <div>
       <h1>Hello Odyssea</h1>
-      <div>
+      {/* <div>
         <input type="text" defaultValue= "username"></input>
         <input type="password" oonclick="()=>{}"></input>
         <p id="par1"></p>
@@ -72,10 +86,15 @@ function App() {
         date={metrics[1].date}
         client="Odyssea"
       />
-      <MetricItem />
+      <MetricItem /> */}
+      <MetricItem count={metrics[0].count} project={metrics[0].project} developer={metrics[0].developer} date={metrics[0].date} />
+      <MetricItem count={metrics[1].count} project={metrics[1].project} developer={metrics[1].developer} date={metrics[1].date} />
+      <MetricItem count={metrics[2].count} project={metrics[2].project} developer={metrics[2].developer} date={metrics[2].date} />
+      <MetricItem count={metrics[3].count} project={metrics[3].project} developer={metrics[3].developer} date={metrics[3].date} />
+      <MetricItem count={metrics[4].count} project={metrics[4].project} developer={metrics[4].developer} date={metrics[4].date} />
+    </div>
 
-      </div>
   );
 }
- 
+
 export default App;
