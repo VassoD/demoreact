@@ -1,6 +1,6 @@
 import "./MetricItem.css"
 import MetricDate from "./MetricDate"
-import Card from "./Card"
+import Card from "./UI/Card"
 
 const MetricItem = (props) => {
     // const dispDate = props.date.toISOString();
