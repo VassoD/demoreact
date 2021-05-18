@@ -1,5 +1,6 @@
 import "./MetricItem.css"
 import MetricDate from "./MetricDate"
+import Card from "./Card"
 
 const MetricItem = (props) => {
     // const dispDate = props.date.toISOString();
@@ -7,9 +8,7 @@ const MetricItem = (props) => {
     // {hour:"2-digit",minute:"2-digit", hour12:false});
     const dispCount = props.count === 0 ? "-" : props.count;
 
-    return <div className="metric-item">  
-    {/* <div className="metric-item__date">{dispDate}</div> */}
-    {/* metricDate.toISOString() */}
+    return <Card className="metric-item">  
     <div className="metric-item__metric">
         <MetricDate date={props.date} />
         <div>{props.developer}</div>
@@ -18,7 +17,6 @@ const MetricItem = (props) => {
         {/* <h2>{props.client}</h2> */}
     </div>
     <div className="metric-item__count">{dispCount}</div>
-    {/* <div className="metric-item__count">{props.count}</div> */}
-    </div>
+    </Card>
 }
 export default MetricItem
