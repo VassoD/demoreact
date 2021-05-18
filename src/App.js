@@ -21,8 +21,7 @@
 //     </div>
 //   );
 // }
-import MetricItem from "./components/MetricItem"
-
+import Metrics from "./components/Metrics"
 function App() {
 
   const metrics = [
@@ -46,7 +45,7 @@ function App() {
     project: "StockMarket Mobile App",
     count: 16,
   },
-  
+
   {   
     date: new Date(2021, 4, 12, 17, 35, 0 , 0),
     developer: "Vassiliki D",
@@ -63,9 +62,7 @@ function App() {
 
 ]
   return (
-    <div>
-      <h1>Hello Odyssea</h1>
-      {/* <div>
+      /* <div>
         <input type="text" defaultValue= "username"></input>
         <input type="password" oonclick="()=>{}"></input>
         <p id="par1"></p>
@@ -73,26 +70,24 @@ function App() {
 
       </div>
       <MetricItem 
-        count={metrics[0].count}
-        project={metrics[0].project}
-        developer={metrics[0].developer} 
-        date={metrics[0].date}
+        count={data[0].count}
+        project={data[0].project}
+        developer={data[0].developer} 
+        date={data[0].date}
         client="Microsoft" 
         />
       <MetricItem 
-        count={metrics[1].count}
-        project={metrics[1].project}
-        developer={metrics[1].developer} 
-        date={metrics[1].date}
+        count={data[1].count}
+        project={data[1].project}
+        developer={data[1].developer} 
+        date={data[1].date}
         client="Odyssea"
       />
-      <MetricItem /> */}
-      <MetricItem count={metrics[0].count} project={metrics[0].project} developer={metrics[0].developer} date={metrics[0].date} />
-      <MetricItem count={metrics[1].count} project={metrics[1].project} developer={metrics[1].developer} date={metrics[1].date} />
-      <MetricItem count={metrics[2].count} project={metrics[2].project} developer={metrics[2].developer} date={metrics[2].date} />
-      <MetricItem count={metrics[3].count} project={metrics[3].project} developer={metrics[3].developer} date={metrics[3].date} />
-      <MetricItem count={metrics[4].count} project={metrics[4].project} developer={metrics[4].developer} date={metrics[4].date} />
-    </div>
+      <MetricItem /> */
+      <div>
+      <h1>Hello Odyssea</h1>
+      <Metrics data = {metrics}/>
+      </div>
 
   );
 }
