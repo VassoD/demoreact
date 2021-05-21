@@ -1,64 +1,80 @@
-import {useState} from "react"
+import { useState } from "react"
 import "./MetricForm.css"
+
 
 const MetricForm = (props) =>{
 
-    const [developer, setDeveloper] = useState("")
-
-    const developerChangeHandler = (event) => {
+        const [userDeveloper, setUserDeveloper] = useState("")
+    
+        const developerChangedHandler = (event) => {
         // Whenever i have to use something from an event 
         // I should get the values I want in local variables ASAP!
         // AND THEN use the local variables
         // AND FORGER the event object!!!
-        let newValue = event.target.value
-        setDeveloper(newValue)
-        console.log(`Someone typed ${developer}`)
+        let newValue =  event.target.value
+        setUserDeveloper(newValue)
+        console.log(`Someone typed ${userDeveloper}`)
     }
 
-    const dateChangeHandler = (event) => {
-        let newValue = event.target.value
-        setDate(newValue)
-        console.log(`Someone typed ${date}`)
-    }
-    const projectChangeHandler = (event) => {
-        let newValue = event.target.value
-        setProject(newValue)
-        console.log(`Someone typed ${project}`)
-    }
-    const [count, setCount] =useState("")
-    const countChangeHandler = (event) => {
-        let newValue = event.target.value
-        setCount(newValue)
-        console.log(`Someone typed ${count}`)
+    const [userDate, setUserDate] = useState("")
+    const dateChangedHandler = (event) => {
+        let newValue =  event.target.value
+        setUserDate(newValue)
+        console.log(`Someone typed ${userDate}`)
     }
 
-    const genericChangeHandler = event =>{
-        if (event.target.id == "date")
-    
+    const [userProject, setUserProject] = useState("")
+    const projectChangedHandler = (event) => {
+        let newValue =  event.target.value
+        setUserProject(newValue)
+        console.log(`Someone typed ${userProject}`)
     }
+
+    const [userCount, setUserCount] = useState("")
+    const countChangedHandler = (event) => {
+        let newValue =  event.target.value
+        setUserCount(newValue)
+        console.log(`Someone typed ${userCount}`)
+    }
+
+    const onSubmitHandler = event => {
+        event.preventDefault();
+        const newMetric = {
+            date: userDate,
+            developer: userDeveloper,
+            project: userProject,
+            count: userCount,
+          }
+      
+        console.log(newMetric)
+    } 
 
     return (
-        <form>
-                <div className="add-metric__elements">
-                    <div className="add-metric__element">
+        <form onSubmit={onSubmitHandler}>
+            <div className="add-metric__elements">
+                <div className="add-metric__element">
                     <label>Date</label>
-                    <input type="datetime-local" / onChange={dateChangeHandler}>
+                    <input type="datetime-local"  onChange={dateChangedHandler} />
                 </div>
                 <div className="add-metric__element">
                     <label>Developer</label>
-                    <input type="text" onChange={developerChangeHandler} />
+                    <input type="text" onChange={developerChangedHandler} />
                 </div>
                 <div className="add-metric__element">
                     <label>Project</label>
-                    <input type="text" onChange={projectChangeHandler} />
+                    <input type="text" onChange={projectChangedHandler} />
                 </div>
                 <div className="add-metric__element">
                     <label>Count</label>
-                    <input type="number" min="0" step="1" onChange={developerChangeHandler} />
-                </div>   
-            </div>
-            <div className=""
-            </form>
+                    <input type="number" min="0" step="1"  onChange={countChangedHandler} />
+                </div>
 
-                )
+            </div>
+            <div className="add-metric__actions">
+                <button type="submit">Add metric</button>
+            </div>
+        </form>
+    )
 }
+
+export default MetricForm

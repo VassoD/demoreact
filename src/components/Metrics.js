@@ -1,7 +1,6 @@
 import "./Metrics.css"
 import MetricItem from "./MetricItem"
 import Card from "./UI/Card"
-import MetricForm from "./MetricForm"
 
 
 const Metrics =(props) => {

@@ -21,73 +21,48 @@
 //     </div>
 //   );
 // }
+import AddMetric from "./components/AddMetric";
 import Metrics from "./components/Metrics"
+
 function App() {
-
   const metrics = [
-{   
-    date: new Date(2021, 4, 12, 17, 35, 0 , 0),
-    developer: "Vassiliki D",
-    project: "StockMarket Mobile App",
-    count: 16,
-  },
+    {
+      date: new Date(2021, 4, 12, 17, 39, 0, 0),
+      developer: "Aklilu",
+      project: "StockMarket Backend App",
+      count: 5,
+    },
+    {
+      date: new Date(2021, 4, 11, 19, 32, 0, 0),
+      developer: "Joni",
+      project: "Fanzine Mobile App",
+      count: 0,
+    },
+    {
+      date: new Date(2021, 4, 11, 18, 40, 0, 0),
+      developer: "Vassiliki",
+      project: "Fanzine Mobile App",
+      count: 3,
+    },
+    {
+      date: new Date(2021, 4, 12, 17, 30, 0, 0),
+      developer: "Joni",
+      project: "StockMarket Backend App",
+      count: 22,
+    },
+    {
+      date: new Date(2021, 4, 12, 15, 23, 0, 0),
+      developer: "Theodoros",
+      project: "StockMarket Mobile App",
+      count: 0,
+    }
+  ]
 
-  {   
-    date: new Date(2021, 4, 12, 17, 35, 0 , 0),
-    developer: "Vassiliki D",
-    project: "StockMarket Mobile App",
-    count: 16,
-  },
-
-  {   
-    date: new Date(2021, 4, 12, 17, 35, 0 , 0),
-    developer: "Vassiliki D",
-    project: "StockMarket Mobile App",
-    count: 16,
-  },
-
-  {   
-    date: new Date(2021, 4, 12, 17, 35, 0 , 0),
-    developer: "Vassiliki D",
-    project: "StockMarket Mobile App",
-    count: 16,
-  },
-
-  {   
-    date: new Date(2021, 4, 12, 17, 35, 0 , 0),
-    developer: "Vassiliki D",
-    project: "StockMarket Mobile App",
-    count: 16,
-  }
-
-]
   return (
-      /* <div>
-        <input type="text" defaultValue= "username"></input>
-        <input type="password" oonclick="()=>{}"></input>
-        <p id="par1"></p>
-        <p id="par2">Hi from inside</p>
-
-      </div>
-      <MetricItem 
-        count={data[0].count}
-        project={data[0].project}
-        developer={data[0].developer} 
-        date={data[0].date}
-        client="Microsoft" 
-        />
-      <MetricItem 
-        count={data[1].count}
-        project={data[1].project}
-        developer={data[1].developer} 
-        date={data[1].date}
-        client="Odyssea"
-      />
-      <MetricItem /> */
-      <div>
-      <h1>Hello Odyssea</h1>
-      <Metrics data = {metrics}/>
-      </div>
+    <div>
+      <AddMetric />
+      <Metrics data={metrics}/>
+    </div>
 
   );
 }
