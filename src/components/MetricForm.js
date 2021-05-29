@@ -46,7 +46,14 @@ const MetricForm = (props) =>{
             count: userCount,
           }
       
-        console.log(newMetric)
+        console.log("my new metric", newMetric)
+        props.onAddMetric(newMetric)
+        
+        console.log("Reseting form data")
+        setUserDate("")
+        setUserProject("")
+        setUserDeveloper("")
+        setUserCount("")
     } 
 
     return (
@@ -54,11 +61,11 @@ const MetricForm = (props) =>{
             <div className="add-metric__elements">
                 <div className="add-metric__element">
                     <label>Date</label>
-                    <input type="datetime-local"  onChange={dateChangedHandler} />
+                    <input type="datetime-local" value={userDate} onChange={dateChangedHandler} />
                 </div>
                 <div className="add-metric__element">
                     <label>Developer</label>
-                    <input type="text" onChange={developerChangedHandler} />
+                    <input type="text" value={userDeveloper} onChange={developerChangedHandler} />
                 </div>
                 <div className="add-metric__element">
                     <label>Project</label>

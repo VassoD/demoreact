@@ -22,7 +22,9 @@
 //   );
 // }
 import AddMetric from "./components/AddMetric";
-import Metrics from "./components/Metrics"
+import Metrics from "./components/Metrics";
+// import Fanzine FilterMetric from "./components/FilterMetric";
+
 
 function App() {
   const metrics = [
@@ -58,9 +60,13 @@ function App() {
     }
   ]
 
+  const addedMetricHandler =(metric) =>{
+    console.log("the form gave me a new metric to add", metric)
+  }
+  
   return (
     <div>
-      <AddMetric />
+      <AddMetric onAdd={addedMetricHandler}/>
       <Metrics data={metrics}/>
     </div>
 
