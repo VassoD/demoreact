@@ -66,7 +66,7 @@ function App() {
   
   return (
     <div>
-      <AddMetric onAdd={addedMetricHandler}/>
+      <AddMetric onAddMetric={addedMetricHandler}/>
       <Metrics data={metrics}/>
     </div>
 

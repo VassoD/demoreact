@@ -4,6 +4,7 @@ import MetricForm from "./MetricForm"
 const AddMetric = (props) => {
     const addedMetricHandler = (metric) => {
         console.log("someone gave me a new metric to add", metric)
+        props.onAddMetric(metric)
     }
 
     return (
