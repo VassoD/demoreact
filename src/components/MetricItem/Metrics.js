@@ -1,6 +1,6 @@
 import "./Metrics.css"
 import MetricItem from "./MetricItem"
-import Card from "./UI/Card"
+import Card from "../UI/Card"
 
 const Metrics = (props) => {
     return (

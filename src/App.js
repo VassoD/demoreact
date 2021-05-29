@@ -21,8 +21,8 @@
 //     </div>
 //   );
 // }
-import AddMetric from "./components/AddMetric";
-import Metrics from "./components/Metrics";
+import AddMetric from "./components/EditMetricItem/AddMetric";
+import Metrics from "./components/MetricItem/Metrics";
 // import Fanzine FilterMetric from "./components/FilterMetric";
 
 
