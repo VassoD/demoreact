@@ -23,6 +23,7 @@
 // }
 import AddMetric from "./components/EditMetricItem/AddMetric";
 import Metrics from "./components/MetricItem/Metrics";
+import FilterMetrics from "./components/FilterMetrics/FilterMetrics";
 // import Fanzine FilterMetric from "./components/FilterMetric";
 
 
@@ -63,10 +64,14 @@ function App() {
   const addedMetricHandler =(metric) =>{
     console.log("the form gave me a new metric to add", metric)
   }
-  
+  const newStartDateSetHandler = (startDate) => {
+    console.log("Start date set to",startDate)
+  }
+
   return (
     <div>
       <AddMetric onAddMetric={addedMetricHandler}/>
+      <FilterMetrics onSetStartDate={newStartDateSetHandler} />
       <Metrics data={metrics}/>
     </div>
 
