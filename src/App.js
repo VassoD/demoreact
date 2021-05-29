@@ -1,34 +1,11 @@
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 import AddMetric from "./components/EditMetricItem/AddMetric";
 import Metrics from "./components/MetricItem/Metrics";
 import FilterMetrics from "./components/FilterMetrics/FilterMetrics";
-// import Fanzine FilterMetric from "./components/FilterMetric";
-
+import { useState } from "react"
 
 function App() {
-  const metrics = [
+
+  const startupMetrics = [
     {
       date: new Date(2021, 4, 12, 17, 39, 0, 0),
       developer: "Aklilu",
@@ -61,9 +38,17 @@ function App() {
     }
   ]
 
+  const [metrics, setMetrics] = useState(startupMetrics)
+
+  
   const addedMetricHandler =(metric) =>{
     console.log("the form gave me a new metric to add", metric)
+    setMetrics([...metrics, metric]);
+    console.log("my metrics are: ", metrics)
+
   }
+
+
   const newStartDateSetHandler = (startDate) => {
     console.log("Start date set to",startDate)
   }
@@ -76,6 +61,6 @@ function App() {
     </div>
 
   );
+  
 }
-
 export default App;
