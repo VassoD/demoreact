@@ -31,11 +31,11 @@ const MetricForm = (props) =>{
     }
 
     const [userCount, setUserCount] = useState("")
-    const countChangedHandler = (event) => {
-        let newValue =  event.target.value
-        setUserCount(newValue)
-        console.log(`Someone typed ${userCount}`)
-    }
+    // const countChangedHandler = (event) => {
+    //     let newValue =  event.target.value
+    //     setUserCount(newValue)
+    //     console.log(`Someone typed ${userCount}`)
+    // }
 
     const onSubmitHandler = event => {
         event.preventDefault();
@@ -56,6 +56,13 @@ const MetricForm = (props) =>{
         setUserCount("")
     } 
 
+    const doubleClickHandler = (event) => {
+        event.preventDefault();
+        setUserCount(userCount * 2)
+
+        setUserCount{(previousUserCount) => {return previousCount * 2})
+    }
+
     return (
         <form onSubmit={onSubmitHandler}>
             <div className="add-metric__elements">
@@ -73,12 +80,13 @@ const MetricForm = (props) =>{
                 </div>
                 <div className="add-metric__element">
                     <label>Count</label>
-                    <input type="number" min="0" step="1"  onChange={countChangedHandler} />
+                    <input type="number" min="0" step="1" value={userCount} />
                 </div>
 
             </div>
             <div className="add-metric__actions">
                 <button type="submit">Add metric</button>
+                <button onClick={"doubleClickHandler"}>Double</button>
             </div>
         </form>
     )

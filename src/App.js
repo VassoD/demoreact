@@ -43,8 +43,15 @@ function App() {
   
   const addedMetricHandler =(metric) =>{
     console.log("the form gave me a new metric to add", metric)
-    setMetrics([...metrics, metric]);
-    console.log("my metrics are: ", metrics)
+
+
+    // we use the previous state, so DO NOT USE THE SIMPLE setMetrics!!!
+    //setMetrics([...metrics, metric] );
+    // instead use the setMetrics that knows about the previous state
+
+    setMetrics((prevMetrics) => {return [...prevMetrics, metric] });
+
+    // console.log("my metrics are: ", metrics)
 
   }
 
