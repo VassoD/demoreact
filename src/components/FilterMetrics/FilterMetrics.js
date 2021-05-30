@@ -1,15 +1,12 @@
-import { useState } from "react"
 import "./FilterMetrics.css"
 
 
 const FilterMetrics = (props) => {
-    const [startDate, setStartDate] = useState ("")
 
     const startDateChangeHandler = (event) => {
         let newStartDate = event.target.value
         console.log(newStartDate)
         props.onSetStartDate(newStartDate)
-        setStartDate(newStartDate)
     }
 
     return (
@@ -20,7 +17,7 @@ const FilterMetrics = (props) => {
                 </div>
                 <div>
                     <label>Start on</label>
-                    <input type="date" value = {startDate} onChange={startDateChangeHandler} />
+                    <input type="date" value={props.startDate} onChange={startDateChangeHandler} />
                 </div>
             </div>
         </div>

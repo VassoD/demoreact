@@ -3,11 +3,12 @@ import MetricItem from "./MetricItem"
 import Card from "../UI/Card"
 
 const Metrics = (props) => {
+    console.log("filtering on", props.filterDate)
     return (
         <Card className="metrics">
         { 
             props.data.map((item) =>{
-            return <MetricItem count={item.count} project={item.project} developer={item.developer} date={item.date}/>
+            return <MetricItem key={item.id} count={item.count} project={item.project} developer={item.developer} date={item.date}/>
         })
         }
            {/* <MetricItem count={props.data[0].count} project={props.data[0].project} developer={props.data[0].developer} date={props.data[0].date} />

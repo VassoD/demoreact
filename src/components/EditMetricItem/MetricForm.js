@@ -40,6 +40,7 @@ const MetricForm = (props) =>{
     const onSubmitHandler = event => {
         event.preventDefault();
         const newMetric = {
+            id: Math.random(),
             date: userDate,
             developer: userDeveloper,
             project: userProject,
@@ -56,12 +57,12 @@ const MetricForm = (props) =>{
         setUserCount("")
     } 
 
-    const doubleClickHandler = (event) => {
-        event.preventDefault();
-        setUserCount(userCount * 2)
+    // const doubleClickHandler = (event) => {
+    //     event.preventDefault();
+    //     setUserCount(userCount * 2)
 
-        setUserCount{(previousUserCount) => {return previousCount * 2})
-    }
+    //     setUserCount{(previousUserCount) => {return previousCount * 2})
+    // }
 
     return (
         <form onSubmit={onSubmitHandler}>
