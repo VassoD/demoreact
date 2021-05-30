@@ -15,7 +15,7 @@ const FilterMetrics = (props) => {
                 <div className="filter-metrics_element">
                     <p>Filter the metrics</p>
                 </div>
-                <div>
+                <div className="filter-metrics__element">
                     <label>Start on</label>
                     <input type="date" value={props.startDate} onChange={startDateChangeHandler} />
                 </div>

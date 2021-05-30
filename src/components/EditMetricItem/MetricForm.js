@@ -29,16 +29,17 @@ const MetricForm = (props) =>{
         setUserProject(newValue)
         console.log(`Someone typed ${userProject}`)
     }
-
+    
     const [userCount, setUserCount] = useState("")
-    // const countChangedHandler = (event) => {
-    //     let newValue =  event.target.value
-    //     setUserCount(newValue)
-    //     console.log(`Someone typed ${userCount}`)
-    // }
+    const countChangedHandler = (event) => {
+        let newValue =  event.target.value
+        setUserCount(newValue)
+        console.log(`Someone typed ${userCount}`)
+    }
 
     const onSubmitHandler = event => {
         event.preventDefault();
+
         const newMetric = {
             id: Math.random(),
             date: userDate,
@@ -55,7 +56,7 @@ const MetricForm = (props) =>{
         setUserProject("")
         setUserDeveloper("")
         setUserCount("")
-    } 
+    }  
 
     // const doubleClickHandler = (event) => {
     //     event.preventDefault();
@@ -77,17 +78,17 @@ const MetricForm = (props) =>{
                 </div>
                 <div className="add-metric__element">
                     <label>Project</label>
-                    <input type="text" onChange={projectChangedHandler} />
+                    <input type="text" value={userProject} onChange={projectChangedHandler} />
                 </div>
                 <div className="add-metric__element">
                     <label>Count</label>
-                    <input type="number" min="0" step="1" value={userCount} />
+                    <input type="number" min="0" step="1" value={userCount} onChange={countChangedHandler}/>
                 </div>
 
             </div>
             <div className="add-metric__actions">
                 <button type="submit">Add metric</button>
-                <button onClick={"doubleClickHandler"}>Double</button>
+                {/* <button onClick={"doubleClickHandler"}>Double</button> */}
             </div>
         </form>
     )
