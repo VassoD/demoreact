@@ -46,9 +46,9 @@ import { useState } from "react"
 
   const [metrics, setMetrics] = useState(startupMetrics)
 
-  const [startDate, setStartDate] = useState ("")
+  const [startDate, setStartDate] = useState ("2021-05-11")
 
-  const addedMetricHandler =(metric) =>{
+  const addedMetricHandler =(metric ) =>{
     console.log("the form gave me a new metric to add", metric)
     
 
