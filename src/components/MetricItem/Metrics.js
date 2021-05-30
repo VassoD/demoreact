@@ -4,12 +4,30 @@ import Card from "../UI/Card"
 
 const Metrics = (props) => {
     console.log("filtering on", props.filterDate)
+    const date = new Date(props.filterDate)
+
+
+
+    const filteredItems = props.data.filter(item =>{
+        return(
+            item.date.getYear() === date.getYear() && 
+            item.date.getMonth() === date.getMonth() && 
+            item.date.getDate() === date.getDate()
+        )
+    
+    })
+
+
     return (
         <Card className="metrics">
         { 
-            props.data.map((item) =>{
+            filteredItems.length === 0
+            ?
+            <p>No data on that date</p> /*user friendly message*/
+            :
+            filteredItems.map((item) =>{
             return <MetricItem key={item.id} count={item.count} project={item.project} developer={item.developer} date={item.date}/>
-        })
+            })
         }
            {/* <MetricItem count={props.data[0].count} project={props.data[0].project} developer={props.data[0].developer} date={props.data[0].date} />
             <MetricItem count={props.data[1].count} project={props.data[1].project} developer={props.data[1].developer} date={props.data[1].date} />
