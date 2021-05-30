@@ -1,6 +1,6 @@
 import "./Metrics.css"
-import MetricItem from "./MetricItem"
 import Card from "../UI/Card"
+import MetricsList from "./MetricsList.js"
 
 const Metrics = (props) => {
     console.log("filtering on", props.filterDate)
@@ -20,15 +20,10 @@ const Metrics = (props) => {
 
     return (
         <Card className="metrics">
-        { 
-            filteredItems.length === 0
-            ?
-            <p>No data on that date</p> /*user friendly message*/
-            :
-            filteredItems.map((item) =>{
-            return <MetricItem key={item.id} count={item.count} project={item.project} developer={item.developer} date={item.date}/>
-            })
-        }
+
+            <MetricsList data={filteredItems} />
+
+
            {/* <MetricItem count={props.data[0].count} project={props.data[0].project} developer={props.data[0].developer} date={props.data[0].date} />
             <MetricItem count={props.data[1].count} project={props.data[1].project} developer={props.data[1].developer} date={props.data[1].date} />
             <MetricItem count={props.data[2].count} project={props.data[2].project} developer={props.data[2].developer} date={props.data[2].date} />
