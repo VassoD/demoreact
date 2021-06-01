@@ -7,13 +7,24 @@ const AddMetric = (props) => {
     const [error, setError] = useState()
     const addedMetricHandler = (metric) => {
         console.log("someone gave me a new metric to add", metric)
+        const mandatoryValue = " is mandatory"
         if (
-            metric.developer.trim().lenght === 0 ||
-            metric.project.trim().length === 0 ||
-            metric.count.trim().length === 0) {
-                setError("Error data detected")
+            metric.developer.trim().lenght === 0) {
+                setError("Developer name" + mandatoryValue)
         return false;
         }
+        if (
+            metric.developer.trim().lenght === 0) {
+                setError("Project name" + mandatoryValue)
+        return false;
+        }
+
+        if (
+            metric.developer.trim().lenght === 0) {
+                setError("Count" + mandatoryValue)
+        return false;
+        }
+
 
         props.onAddMetric(metric)
         return true;
