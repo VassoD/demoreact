@@ -7,6 +7,8 @@ const Metrics = (props) => {
     const date = new Date(props.filterDate)
 
     const filteredItems = props.data.filter( item => {
+        console.log("filtering on", item.date)
+        console.log("the year is", item.date.get)
         return (
             item.date.getYear() === date.getYear() &&
             item.date.getMonth() === date.getMonth() &&
