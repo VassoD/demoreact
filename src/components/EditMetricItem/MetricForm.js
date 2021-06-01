@@ -2,6 +2,7 @@ import { useState } from "react"
 import "./MetricForm.css"
 
 
+
 const MetricForm = (props) =>{
 
         const [userDeveloper, setUserDeveloper] = useState("")
@@ -39,23 +40,26 @@ const MetricForm = (props) =>{
 
     const onSubmitHandler = event => {
         event.preventDefault();
-
         const newMetric = {
             id: Math.random(),
-            date: userDate,
+            date: new Date(userDate),
             developer: userDeveloper,
             project: userProject,
             count: userCount,
-          }
-      
+          } 
+        
         console.log("my new metric", newMetric)
-        props.onAddMetric(newMetric)
+        if (props.onAddMetric(newMetric)){
         
         console.log("Reseting form data")
         setUserDate("")
         setUserProject("")
         setUserDeveloper("")
         setUserCount("")
+        
+          }  else {
+            console.log("error during validation")
+        }
     }  
 
     // const doubleClickHandler = (event) => {
