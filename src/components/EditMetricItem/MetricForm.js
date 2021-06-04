@@ -1,6 +1,6 @@
 import { useState } from "react"
 import "./MetricForm.css"
-
+import Input from "../UI/Input"
 
 
 const MetricForm = (props) =>{
@@ -72,10 +72,12 @@ const MetricForm = (props) =>{
     return (
         <form onSubmit={onSubmitHandler}>
             <div className="add-metric__elements">
-                <div className="add-metric__element">
+                {/* <div className="add-metric__element">
                     <label>Date</label>
                     <input type="datetime-local" value={userDate} onChange={dateChangedHandler} />
-                </div>
+                </div> */}
+                <Input id="date" label="Date" type="datetime-local" 
+                value={userDate} onChange={dateChangedHandler} className="add-metric__element"/>
                 <div className="add-metric__element">
                     <label>Developer</label>
                     <input type="text" value={userDeveloper} onChange={developerChangedHandler} />
