@@ -72,6 +72,8 @@ const MetricForm = (props) =>{
     return (
         <form onSubmit={onSubmitHandler}>
             <div className="add-metric__elements">
+             
+                
                 <Input className="add-metric__element"
                     labelText="Date"
                     input={
@@ -84,19 +86,45 @@ const MetricForm = (props) =>{
                     }
 
                 />
-                <div className="add-metric__element">
-                    <label>Developer</label>
-                    <input type="text" value={userDeveloper} onChange={developerChangedHandler} />
-                </div>
-                <div className="add-metric__element">
-                    <label>Project</label>
-                    <input type="text" value={userProject} onChange={projectChangedHandler} />
-                </div>
-                <div className="add-metric__element">
-                    <label>Count</label>
-                    <input type="number" min="0" step="1" value={userCount} onChange={countChangedHandler}/>
-                </div>
+               
+                <Input className="add-metric__element"
+                    labelText="Project"
+                    input={
+                        {
+                            id: "date",
+                            type: "text",
+                            value: userProject,
+                            onChange: projectChangedHandler
+                        }
+                    }
 
+                />
+       
+                <Input className="add-metric__element"
+                    labelText="Developer"
+                    input={
+                        {
+                            id: "date",
+                            type: "text",
+                            value: userDeveloper,
+                            onChange: developerChangedHandler
+                        }
+                    }
+
+                />
+                
+                <Input className="add-metric__element"
+                    labelText="Count"
+                    input={
+                        {
+                            id: "date",
+                            type: "number",
+                            value: userCount,
+                            onChange: countChangedHandler
+                        }
+                    }
+
+                />
             </div>
             <div className="add-metric__actions">
                 <button type="submit">Add metric</button>
