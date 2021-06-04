@@ -72,12 +72,18 @@ const MetricForm = (props) =>{
     return (
         <form onSubmit={onSubmitHandler}>
             <div className="add-metric__elements">
-                {/* <div className="add-metric__element">
-                    <label>Date</label>
-                    <input type="datetime-local" value={userDate} onChange={dateChangedHandler} />
-                </div> */}
-                <Input id="date" label="Date" type="datetime-local" 
-                value={userDate} onChange={dateChangedHandler} className="add-metric__element"/>
+                <Input className="add-metric__element"
+                    labelText="Date"
+                    input={
+                        {
+                            id: "date",
+                            type: "datetime-local",
+                            value: userDate,
+                            onChange: dateChangedHandler
+                        }
+                    }
+
+                />
                 <div className="add-metric__element">
                     <label>Developer</label>
                     <input type="text" value={userDeveloper} onChange={developerChangedHandler} />
