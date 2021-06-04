@@ -72,8 +72,6 @@ const MetricForm = (props) =>{
     return (
         <form onSubmit={onSubmitHandler}>
             <div className="add-metric__elements">
-             
-                
                 <Input className="add-metric__element"
                     labelText="Date"
                     input={

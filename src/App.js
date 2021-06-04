@@ -3,7 +3,7 @@ import Metrics from "./components/MetricItem/Metrics";
 import FilterMetrics from "./components/FilterMetrics/FilterMetrics";
 import { useState } from "react"
 import Login from "./components/Login/Login"
-
+import Modal from "./components/UI/Modal"
 
   const startupMetrics = [
     { 
@@ -72,7 +72,7 @@ import Login from "./components/Login/Login"
 
   return (
     <div>
-      <Login></Login>
+      <Modal><Login></Login></Modal>
       <AddMetric onAddMetric={addedMetricHandler}/>
       <FilterMetrics startDate={startDate} onSetStartDate={newStartDateSetHandler} />
       <Metrics filterDate={startDate} data={metrics}/>
