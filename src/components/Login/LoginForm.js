@@ -9,7 +9,7 @@ const LoginForm =(props) =>{
                 labelText="Username"
                 input = {{
                     id: "username",
-                    type: "Username"
+                    type: "text"
                 }}
         />
             <Input className="login__element"
@@ -22,7 +22,7 @@ const LoginForm =(props) =>{
                 />
                 </div>
                 <div className="login__actions">
-                    <button type = "submit">Add metric</button>
+                    <button type = "submit">Login</button>
                 </div>
 
 

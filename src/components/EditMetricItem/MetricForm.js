@@ -58,7 +58,7 @@ const MetricForm = (props) =>{
         setUserCount("")
         
           }  else {
-            console.log("error during validation")
+            console.log("error found during validation!")
         }
     }  
 
@@ -118,7 +118,9 @@ const MetricForm = (props) =>{
                             id: "date",
                             type: "number",
                             value: userCount,
-                            onChange: countChangedHandler
+                            onChange: countChangedHandler,
+                            min: "0",
+                            step: "1"
                         }
                     }
 

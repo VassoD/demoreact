@@ -49,7 +49,7 @@ import Modal from "./components/UI/Modal"
 
   const [startDate, setStartDate] = useState ("2021-05-11")
 
-  const addedMetricHandler =(metric ) =>{
+  const addedMetricHandler =(metric) =>{
     console.log("the form gave me a new metric to add", metric)
     
 
@@ -69,10 +69,14 @@ import Modal from "./components/UI/Modal"
     setStartDate(startDate);
   }
 
+// const isLoggedIn = true;
+
+
 
   return (
     <div>
-      <Modal><Login></Login></Modal>
+      {/* {!isLoggedIn && <Modal><Login/></Modal>} */}
+      <Modal><Login/></Modal>
       <AddMetric onAddMetric={addedMetricHandler}/>
       <FilterMetrics startDate={startDate} onSetStartDate={newStartDateSetHandler} />
       <Metrics filterDate={startDate} data={metrics}/>
